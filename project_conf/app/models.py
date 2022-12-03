@@ -10,7 +10,7 @@ class Doctor(models.Model):
 class Paciente(models.Model):
     nome = models.CharField(max_length=50)
     endereço = models.TextField
-    genero = models.CharField()
+    genero = models.CharField(max_length=10)
     cpf = models.IntegerField()
     tel = models.IntegerField(null=True)
 
