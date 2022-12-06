@@ -7,20 +7,20 @@ def home(request):
         return redirect('login')
     return render(request,'home.html')
 
-def login_admin(request):
+def Login(request):
     error = ""
     if request.method == 'POST':
-        login = request.POST['login']
+        nome = request.POST['login']
         senha = request.POST['senha']
-        user = authenticate(username=login, password = senha)
+        user = authenticate(username=nome, password = senha)
         try:
             if user.is_staff:
-                login(request,user)
-                error = "N"
+                login(request, user)
+                error = "no"
             else:
-                error= "Y"
+                error= "yes"
         except:
-            error = "Y"
+            error = "yes"
     d = {'error':error}
     return render(request,'login_admin.html', d)
     
@@ -40,4 +40,7 @@ def medico(request):
 
 def consulta(request): 
     return render(request,'consulta.html')
+
+def index(request): 
+    return render(request,'index.html')
 

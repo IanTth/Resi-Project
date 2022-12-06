@@ -1,12 +1,11 @@
 {% block content %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Help.Me</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,20 +16,21 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
-    <link href="static/css/nav.css" rel="stylesheet" />
+    <link href="static/css/nav.css" rel="stylesheet"/>
+    
   </head>
   <body>
     <div class="background"></div>
     <nav class="navbar">
-      <img class="navbar-logo" src="static/img/logo.png" />
+      <img class="navbar-logo" src="/static/img/logo.png" />
     </nav>
     <button class="navbar-burger" onclick="toggleMenu()"></button>
     <nav class="menu">
       <a href="" style="animation-delay: 0.1s">Dashboard</a>
-      <a href="#" style="animation-delay: 0.2s">Paciente</a>
-      <a href="" style="animation-delay: 0.3s">Medico</a>
-      <a href="#" style="animation-delay: 0.4s">Consulta</a>
-      <a href="#" style="animation-delay: 0.5s">Tabela</a>
+      <a href="{% url 'paciente'%}" style="animation-delay: 0.2s">Paciente</a>
+      <a href="{% url 'doctor'%}" style="animation-delay: 0.3s">Medico</a>
+      <a href="{% url 'consulta'%}" style="animation-delay: 0.4s">Consulta</a>
+      <a href="" style="animation-delay: 0.5s">Tabela</a>
     </nav>
     <script type="text/javascript">
       const toggleMenu = () => {
@@ -42,11 +42,3 @@
 
 
 {% endblock content %}
-
-<!-- 
-
-exemplo de link entre as páginas
-
-    href='{% url 'home' %}'
-    
--->
