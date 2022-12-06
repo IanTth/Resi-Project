@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login , logout
 
 
+def index(request): 
+    
+    return render(request,'index.html')
+
 def home(request):
     if not request.user.is_staff:
         return redirect('login')
@@ -27,20 +31,24 @@ def Login(request):
 def logout_admin(request):
     if not request.user.is_staff:
         return redirect('login')
-
-
-
+    logout(request)
+    return redirect('login')
 
 
 def paciente(request): 
+    if not request.user.is_staff:
+        return redirect('login')
     return render(request,'paciente.html')
 
-def medico(request): 
+def medico(request):
+    if not request.user.is_staff:
+        return redirect('login')
     return render(request,'doctor.html')
 
 def consulta(request): 
+    if not request.user.is_staff:
+        return redirect('login')
     return render(request,'consulta.html')
 
-def index(request): 
-    return render(request,'index.html')
+
 

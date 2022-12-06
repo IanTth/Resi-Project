@@ -31,6 +31,9 @@
       <a href="{% url 'doctor'%}" style="animation-delay: 0.3s">Medico</a>
       <a href="{% url 'consulta'%}" style="animation-delay: 0.4s">Consulta</a>
       <a href="" style="animation-delay: 0.5s">Tabela</a>
+      {% if request.user.is_staff %}
+      <a href="{% url 'logout_admin'%}" style="animation-delay: 0.6s">Sair</a>
+      {% endif %}
     </nav>
     <script type="text/javascript">
       const toggleMenu = () => {
