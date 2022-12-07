@@ -13,6 +13,7 @@ class Paciente(models.Model):
     genero = models.CharField(max_length=10)
     cpf = models.IntegerField()
     tel = models.IntegerField(null=True)
+    nascimento = models.DateField()
 
 
 class Consulta(models.Model):

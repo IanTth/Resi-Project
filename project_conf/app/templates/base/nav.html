@@ -1,47 +1,41 @@
 {% block content %}
-
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
-    <link href="static/css/nav.css" rel="stylesheet"/>
-    
-  </head>
-  <body>
-    <div class="background"></div>
-    <nav class="navbar">
-      <img class="navbar-logo" src="/static/img/logo.png" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/nav.css">
+    <link rel="stylesheet" href="/static/css/style.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'><!--Link BOXICONS-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/><!--Link Swiper's CSS-->
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="nav__logo"><h3>Help.Me</h3></a>
+            
+            <ul id="nav__items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#doctor">Médicos</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
+                {% if not request.user.is_staff %}
+                <li><a href="{% url 'login' %}" target="_blank" class="btn" >Login</a></li>
+                {% endif %}
+                {% if request.user.is_staff %}
+                <li><a href="{% url 'logout_admin'%}" class="btn">Sair</a></li>
+                {% endif %}
+            </ul>
+
+                <button id="open__nav-btn"><i class='bx bx-menu'></i></button>
+                <button id="close__nav-btn"><i class='bx bx-x' ></i></button>
+            
+        </div>
     </nav>
-    <button class="navbar-burger" onclick="toggleMenu()"></button>
-    <nav class="menu">
-      <a href="" style="animation-delay: 0.1s">Dashboard</a>
-      <a href="{% url 'paciente'%}" style="animation-delay: 0.2s">Paciente</a>
-      <a href="{% url 'doctor'%}" style="animation-delay: 0.3s">Medico</a>
-      <a href="{% url 'consulta'%}" style="animation-delay: 0.4s">Consulta</a>
-      <a href="" style="animation-delay: 0.5s">Tabela</a>
-      {% if request.user.is_staff %}
-      <a href="{% url 'logout_admin'%}" style="animation-delay: 0.6s">Sair</a>
-      {% endif %}
-    </nav>
-    <script type="text/javascript">
-      const toggleMenu = () => {
-        document.body.classList.toggle("open");
-      };
-    </script>
-  </body>
-</html>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script><!-- Swiper JS -->
+    <script src="static/js/main.js"></script><!--javascript botao menu-->
+</body
 
 
 {% endblock content %}

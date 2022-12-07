@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/style.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'><!--Link BOXICONS-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/><!--Link Swiper's CSS-->
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="#" class="nav__logo"><h3>Help.Me</h3></a>
+            
+            <ul id="nav__items">
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#doctor">Médicos</a></li>
+                <li><a href="#testimonials">Depoimentos</a></li>
+                <li><a href="{% url 'login' %}" target="_blank" class="btn" >Login</a></li>
+            </ul>
+
+                <button id="open__nav-btn"><i class='bx bx-menu'></i></button>
+                <button id="close__nav-btn"><i class='bx bx-x' ></i></button>
+            
+        </div>
+    </nav>
+
+
+
+
+
+    <header>
+        <div class="container">
+            <div class="header__content">
+                <h1>Soluções de saúde completas para todos</h1>
+                <p>Possuimos os melhores protocolos em saúde.</p>
+                <a href="Login.html" class="btn">Login</a>
+            </div>
+            <div class="header__image">
+                <img src="static/img/svg/header.svg" alt="Header Image">
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+    <section id="services">
+        <h2>Nossos Serviços</h2>
+        <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+
+        <div class="container">
+            <article>
+                <i class='bx bxs-book-content'></i>
+                <div>
+                   <h4>Consulta</h4> 
+                   <small>
+                    t is a long established fact that a reader will be distracted by the readable content of a page
+                   </small>
+                </div>
+            </article>
+            <article>
+                <i class='bx bxs-book-content'></i>
+                <div>
+                   <h4>Exames</h4> 
+                   <small>
+                    t is a long established fact that a reader will be distracted by the readable content of a page
+                   </small>
+                </div>
+            </article>
+            <article>
+                <i class='bx bxs-book-content'></i>
+                <div>
+                   <h4>Consulta Online</h4> 
+                   <small>
+                    t is a long established fact that a reader will be distracted by the readable content of a page
+                   </small>
+                </div>
+            </article>
+            <article>
+                <i class='bx bxs-book-content'></i>
+                <div>
+                   <h4>UTI</h4> 
+                   <small>
+                    t is a long established fact that a reader will be distracted by the readable content of a page
+                   </small>
+                </div>
+            </article>
+            <article>
+                <i class='bx bxs-book-content'></i>
+                <div>
+                   <h4>Internação</h4> 
+                   <small>
+                    t is a long established fact that a reader will be distracted by the readable content of a page
+                   </small>
+                </div>
+            </article>
+            <article>
+                <i class='bx bxs-book-content'></i>
+                <div>
+                   <h4>Cirurgia</h4> 
+                   <small>
+                    t is a long established fact that a reader will be distracted by the readable content of a page
+                   </small>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+<section id="doctor">
+    <h2>Nossos Médicos</h2>
+    <p>
+        orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    </p>
+    <div class="container">
+        <article>
+            <div class="doctor__image">
+                <img src="static/img/specialist1.jpg" alt="Médico 1">
+            </div>
+            <div class="doctor__details">
+                <h4>Dr. Gilvan Filho</h4>
+                <small>Cirurgião</small>
+            </div>
+            <div class="doctor__socials">
+                <a href="#" target="_blank"><i class='bx bxl-linkedin'style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-twitter' style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-instagram' style='color:#121111'></i></a>
+            </div>
+            <a href="#" target="_blank" class="doctor__whatsapp"><i class='bx bxl-whatsapp'></i></a>
+        </article>
+
+
+
+        <article>
+            <div class="doctor__image">
+                <img src="static/img/specialist2.jpg" alt="Médico 2">
+            </div>
+            <div class="doctor__details">
+                <h4>Dr. Manuele Simões</h4>
+                <small>Clinica</small>
+            </div>
+            <div class="doctor__socials">
+                <a href="#" target="_blank"><i class='bx bxl-linkedin'style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-twitter' style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-instagram' style='color:#121111'></i></a>
+            </div>
+            <a href="#" target="_blank" class="doctor__whatsapp"><i class='bx bxl-whatsapp'></i></a>
+        </article>
+
+
+
+        <article>
+            <div class="doctor__image">
+                <img src="static/img/specialist3.jpg" alt="Médico 3">
+            </div>
+            <div class="doctor__details">
+                <h4>Dra. Bárbara Paula Vadão</h4>
+                <small>Pediatra</small>
+            </div>
+            <div class="doctor__socials">
+                <a href="#" target="_blank"><i class='bx bxl-linkedin' style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-twitter' style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-instagram' style='color:#121111'></i></a>
+            </div>
+            <a href="#" target="_blank" class="doctor__whatsapp"><i class='bx bxl-whatsapp'></i></a>
+        </article>
+
+        <article>
+            <div class="doctor__image">
+                <img src="static/img/specialist4.jpg" alt="Médico 4">
+            </div>
+            <div class="doctor__details">
+                <h4>Dr. Amarilla  Canário</h4>
+                <small>Pediatra</small>
+            </div>
+            <div class="doctor__socials">
+                <a href="#" target="_blank"><i class='bx bxl-linkedin' style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-twitter' style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-instagram' style='color:#121111'></i></a>
+            </div>
+            <a href="#" target="_blank" class="doctor__whatsapp"><i class='bx bxl-whatsapp' ></i></a>
+        </article>
+    </div>
+</section>
+
+
+
+<section id="testimonials"  class="swiper mySwiper">
+    <h2>O que nossos pacientes falam</h2>
+    <p>Essas são as opnições dos nossos pacientes</p>
+
+    <div class="swiper-wrapper">
+        <article class="swiper-slide">
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+            </p>
+            <div class="patient">
+                <div class="avatar">
+                    <img src="static/img/avatar1.jpg" alt="Patiente 1">
+                </div>
+                <div class="patient__details">
+                    <h5>Ana Aurélia</h5>
+                    <small>Paciente</small>
+                </div>
+            </div>
+        </article>
+
+        <article class="swiper-slide">
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+            </p>
+            <div class="patient">
+                <div class="avatar">
+                    <img src="static/img/avatar2.jpg" alt="Patiente 2">
+                </div>
+                <div class="patient__details">
+                    <h5>Marcos Aurélio</h5>
+                    <small>Paciente</small>
+                </div>
+            </div>
+        </article>
+
+        <article class="swiper-slide">
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+            </p>
+            <div class="patient">
+                <div class="avatar">
+                    <img src="static/img/avatar3.jpg" alt="Patiente 3">
+                </div>
+                <div class="patient__details">
+                    <h5>Lucas Oliveira</h5>
+                    <small>Paciente</small>
+                </div>
+            </div>
+        </article>
+
+        <article class="swiper-slide">
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+            </p>
+            <div class="patient">
+                <div class="avatar">
+                    <img src="static/img/avatar4.jpg" alt="Patiente 4">
+                </div>
+                <div class="patient__details">
+                    <h5>Neuza Paiva</h5>
+                    <small>Paciente</small>
+                </div>
+            </div>
+        </article>
+
+        <article class="swiper-slide">
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+            </p>
+            <div class="patient">
+                <div class="avatar">
+                    <img src="static/img/avatar5.jpg" alt="Patiente 5">
+                </div>
+                <div class="patient__details">
+                    <h5>Dalila Santos</h5>
+                    <small>Paciente</small>
+                </div>
+            </div>
+        </article>
+
+        <article class="swiper-slide">
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+            </p>
+            <div class="patient">
+                <div class="avatar">
+                    <img src="static/img/avatar6.jpg" alt="Patiente 6">
+                </div>
+                <div class="patient__details">
+                    <h5>Eduarda Souza</h5>
+                    <small>Paciente</small>
+                </div>
+            </div>
+        </article>
+
+        <article class="swiper-slide">
+            <p>
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+            </p>
+            <div class="patient">
+                <div class="avatar">
+                    <img src="static/img/avatar7.jpg" alt="Patiente 7">
+                </div>
+                <div class="patient__details">
+                    <h5>Camila Aguiar</h5>
+                    <small>Paciente</small>
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="swiper-pagination"></div>
+</section>
+
+
+<footer>
+    <div class="container">
+        <article class="contact">
+            <div class="contact__items">
+                <i class='bx bx-phone'></i>
+                <a href="tel:+558140028922"><h3>40028922</h3></a>
+            </div>
+            <div class="contact__items">
+                <i class='bx bx-envelope'></i>
+                <a href="mailto:Ouvidoria@helpMe.com"><h3>Ouvidoria@helpMe.com</h3></a>
+            </div>
+        </article>
+
+        <article class="adress">
+            <i class='bx bx-home'></i>
+            <a href="https://www.google.com/maps/dir/-8.0265718,-34.9022743/faculdade+senac/@-8.0400937,-34.9093376,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x7ab1997eb26b1bb:0x38559aaa17ddef7c!2m2!1d-34.8852306!2d-8.0524945" target="_blank"><h3> R. do Pombal, 57 - Santo Amaro, Recife - PE, 50100-170</h3></a>
+            
+            <a href="#"></i></a>
+        </article>
+
+        <article>
+            <div class="footer__socials">
+                <a href="#" target="_blank"><i class='bx bxl-facebook-circle' ></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-youtube' ></i></a>
+                <a href="#" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+            </div> 
+        </article>
+
+        </div>
+        <div class="copyright">
+            <small>&copy; Copyright: 2022 por Hospital Help.Me. Todos os diretos reservados. |  Dr. Weslley Rendrick Guedes
+        </div>
+</footer>
+
+
+
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script><!-- Swiper JS -->
+<script src="static/js/main.js"></script><!--javascript botao menu-->
+
+
+</body>
+</html>
