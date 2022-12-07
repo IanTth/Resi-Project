@@ -40,7 +40,7 @@ def del_consulta(request,pid):
         return redirect('login')
     consulta = Consulta.objects.get(id=pid)
     consulta.delete()
-    return redirect('consulta')
+    return redirect('home')
 
 
 

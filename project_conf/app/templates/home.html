@@ -58,7 +58,7 @@
             <td>{{i.Paciente}}</td>
             <td>{{i.data}}</td>
             <td>{{i.hora}}</td>
-            <td><a class="btn btn-danger" href="" onclick="return confirm('Deseja mesmo excluir?')">Deletar</a></td>
+            <td><a class="btn btn-danger" href="{% url 'del_consulta' i.id %}" onclick="return confirm('Deseja mesmo excluir?')">Deletar</a></td>
           </tr>
         {% endfor %}
         </tbody>
