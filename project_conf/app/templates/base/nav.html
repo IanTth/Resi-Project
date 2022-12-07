@@ -5,9 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/static/css/nav.css">
-    <link rel="stylesheet" href="/static/css/style.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'><!--Link BOXICONS-->
+     <link rel="stylesheet" href="/static/css/style.min.2.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.2.css' rel='stylesheet'><!--Link BOXICONS-->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/><!--Link Swiper's CSS-->
 </head>
 <body>
@@ -16,15 +15,19 @@
             <a href="#" class="nav__logo"><h3>Help.Me</h3></a>
             
             <ul id="nav__items">
-                <li><a href="#">Home</a></li>
+                {% if not request.user.is_staff %}
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="#services">Serviços</a></li>
                 <li><a href="#doctor">Médicos</a></li>
                 <li><a href="#testimonials">Depoimentos</a></li>
-                {% if not request.user.is_staff %}
-                <li><a href="{% url 'login' %}" target="_blank" class="btn" >Login</a></li>
+                
+                <li><a href="{% url 'login' %}"  class="btn" >Login</a></li>
                 {% endif %}
                 {% if request.user.is_staff %}
-                <li><a href="{% url 'logout_admin'%}" class="btn">Sair</a></li>
+                <li><a href="{% url 'home'%}">Consultas</a></li>
+                <li><a href="{% url 'paciente'%}">Pacientes</a></li>
+                <li><a href="{% url 'doctor'%}">Médicos</a></li>
+                <li><a href="{% url 'logout'%}" class="btn">Sair</a></li>
                 {% endif %}
             </ul>
 

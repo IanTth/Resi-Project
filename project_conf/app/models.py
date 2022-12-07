@@ -7,17 +7,26 @@ class Doctor(models.Model):
     crm = models.IntegerField()
     tel = models.IntegerField()
 
+    def __str__(self):
+        return self.nome
+
 class Paciente(models.Model):
     nome = models.CharField(max_length=50)
-    endereço = models.TextField
     genero = models.CharField(max_length=10)
     cpf = models.IntegerField()
     tel = models.IntegerField(null=True)
     nascimento = models.DateField()
 
+    def __str__(self):
+        return self.nome
+
 
 class Consulta(models.Model):
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
-    paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
+    Doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
+    Paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     data = models.DateField()
     hora = models.TimeField()
+
+    def __str__(self):
+        return self.Doctor.nome + "__"+self.Paciente.nome
+        

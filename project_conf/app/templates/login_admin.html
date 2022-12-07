@@ -1,4 +1,3 @@
-
 {% ifequal error 'no' %}
 <script>
     alert('Login realizado');
@@ -28,9 +27,9 @@
     <form method="POST" action="">
       {% csrf_token %}
       <div class="txt_field">
-        <input name="cpf" type="text" required>
+        <input name="nome" type="text" required>
         <span></span>
-        <Label>CPF</Label>
+        <Label>Nome</Label>
       </div>
       <div class="txt_field">
         <input name="senha" type="password" required>

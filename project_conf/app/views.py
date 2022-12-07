@@ -10,17 +10,46 @@ def index(request):
 def home(request):
     if not request.user.is_staff:
         return redirect('login')
-    return render(request,'home.html')
 
+    doctor1 = Doctor.objects.all()
+    paciente1 = Paciente.objects.all()
+
+    if request.method == 'POST':
+        n = request.POST['doctor']
+        p = request.POST['paciente']
+        da = request.POST['data']
+        h = request.POST['hora']
+
+        doctor = Doctor.objects.filter(nome=n).first()
+        paciente = Paciente.objects.filter(nome=p).first()
+
+        try:
+            Consulta.objects.create(Doctor=doctor, Paciente=paciente, data=da, hora=h)
+            return redirect('consulta')
+        except:
+            error = ""
+
+    con = Consulta.objects.all()
+    d = {'con':con,'doctor':doctor1, 'paciente':paciente1}
+    return render(request,'home.html',d)
+
+
+
+def del_consulta(request,pid):
+    if not request.user.is_staff:
+        return redirect('login')
+    consulta = Consulta.objects.get(id=pid)
+    consulta.delete()
+    return redirect('consulta')
 
 
 
 def Login(request):
     error = ""
     if request.method == 'POST':
-        cpf = request.POST['cpf']
+        nome = request.POST['nome']
         senha = request.POST['senha']
-        user = authenticate(username=cpf, password = senha)
+        user = authenticate(username=nome, password = senha)
         try:
             if user.is_staff:
                 login(request, user)
@@ -32,11 +61,11 @@ def Login(request):
     d = {'error':error}
     return render(request,'login_admin.html', d)
     
-def logout_admin(request):
+def Logout(request):
     if not request.user.is_staff:
         return redirect('login')
     logout(request)
-    return redirect('login')
+    return redirect('index')
 
 
 
@@ -45,7 +74,29 @@ def logout_admin(request):
 def paciente(request): 
     if not request.user.is_staff:
         return redirect('login')
-    return render(request,'paciente.html')
+
+    if request.method == 'POST':
+        nome = request.POST['nome']
+        genero = request.POST['genero']
+        cpf = request.POST['cpf']
+        nascimento = request.POST['nascimento']
+        tel = request.POST['tel']
+    
+        Paciente.objects.create(nome=nome, genero=genero, cpf=cpf, nascimento=nascimento, tel=tel)
+            
+        
+        return redirect('paciente')
+
+    pac = Paciente.objects.all()
+    p = {'pac':pac}
+    return render(request,'paciente.html',p)
+
+def del_paciente(request,pid):
+    if not request.user.is_staff:
+        return redirect('login')
+    paciente = Paciente.objects.get(cpf=pid)
+    paciente.delete()
+    return redirect('paciente')
 
 
 
@@ -53,21 +104,7 @@ def paciente(request):
 def doctor(request):
     if not request.user.is_staff:
         return redirect('login')
-    doc = Doctor.objects.all()
-    d = {'doc':doc}
-    return render(request,'doctor.html', d)
 
-def del_doctor(request,pid):
-    if not request.user.is_staff:
-        return redirect('login')
-    doctor = Doctor.objects.get(crm=pid)
-    doctor.delete()
-    return redirect('doctor')
-
-def add_doctor(request):
-    error = ""
-    if not request.user.is_staff:
-        return redirect('login')
     if request.method == 'POST':
         nome = request.POST['nome']
         espec = request.POST['espec']
@@ -75,22 +112,26 @@ def add_doctor(request):
         crm = request.POST['crm']
         tel = request.POST['tel']
     
-        try:
-            Doctor.objects.create(nome=nome, espec=espec, cpf=cpf, crm=crm, tel=tel)
-            error = 'no'
+        Doctor.objects.create(nome=nome, espec=espec, cpf=cpf, crm=crm, tel=tel)
+            
+        
+        return redirect('doctor')
 
-        except:
-            error = 'yes'
-    d = {'error':error}
+
+    doc = Doctor.objects.all()
+    d = {'doc':doc}
     return render(request,'doctor.html', d)
 
-
-
-
-
-
-def consulta(request): 
+def del_doctor(request,pid):
     if not request.user.is_staff:
         return redirect('login')
-    return render(request,'consulta.html')
+    doctor = Doctor.objects.get(cpf=pid)
+    doctor.delete()
+    return redirect('doctor')
+
+
+
+
+
+
 

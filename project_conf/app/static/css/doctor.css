@@ -1,13 +1,11 @@
-
-
-
-
-#tabela{
-    margin-top: 500px;
-}
-
-thead {
-
+.titulo-page{
+    justify-content: center;
+    margin-top: 2em;
+  
+  }
+  .titulo-page h1{
+    text-align: center;
+    font-family: sans-serif;
     
-
-}
+  
+  }

@@ -22,14 +22,17 @@ from .views import *
 
 urlpatterns = [
     path('', index, name='index'),
+
     path('doctor/', doctor, name='doctor'),
     path('del_doctor(?P<int:pid>)/', del_doctor, name='del_doctor'),
-    path('add_doctor/', add_doctor, name='add_doctor'),
 
     path('login/', Login, name='login'),
-    path('logout/', logout, name='logout_admin'),
+    path('logout/', Logout, name='logout'),
+
     path('paciente/', paciente, name='paciente'),
-    path('consulta/', consulta, name='consulta'),
+    path('del_paciente/(?P<int:pid>)/', del_paciente, name='del_paciente'),
+
     path('home/', home, name='home'),
+    path('del_consulta/(?P<int:pid>)/', del_consulta, name='del_consulta'),
 
 ] + static(settings.STATIC_URL)

@@ -11,14 +11,16 @@
 <body>
     <nav>
         <div class="container">
-            <a href="#" class="nav__logo"><h3>Help.Me</h3></a>
-            
+            <a href="{% url 'index' %}" class="nav__logo"><h3>Help.Me</h3></a>
+           
             <ul id="nav__items">
-                <li><a href="#">Home</a></li>
+                <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="#services">Serviços</a></li>
                 <li><a href="#doctor">Médicos</a></li>
                 <li><a href="#testimonials">Depoimentos</a></li>
-                <li><a href="{% url 'login' %}" target="_blank" class="btn" >Login</a></li>
+                {% if not request.user.is_staff %}
+                <li><a href="{% url 'login' %}"  class="btn" >Login</a></li>
+                {% endif %}
             </ul>
 
                 <button id="open__nav-btn"><i class='bx bx-menu'></i></button>
@@ -28,15 +30,12 @@
     </nav>
 
 
-
-
-
     <header>
         <div class="container">
             <div class="header__content">
                 <h1>Soluções de saúde completas para todos</h1>
                 <p>Possuimos os melhores protocolos em saúde.</p>
-                <a href="Login.html" class="btn">Login</a>
+                <a href="{% url 'login' %}" class="btn">Marque já a sua consulta!!</a>
             </div>
             <div class="header__image">
                 <img src="static/img/svg/header.svg" alt="Header Image">
@@ -51,7 +50,7 @@
     <section id="services">
         <h2>Nossos Serviços</h2>
         <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Nós temos a melhor infraestrutura para te ajudar!
         </p>
 
         <div class="container">
@@ -60,7 +59,7 @@
                 <div>
                    <h4>Consulta</h4> 
                    <small>
-                    t is a long established fact that a reader will be distracted by the readable content of a page
+                    Temos unidades disponíveis por todo o país. Entre em contato conosco!
                    </small>
                 </div>
             </article>
@@ -69,7 +68,7 @@
                 <div>
                    <h4>Exames</h4> 
                    <small>
-                    t is a long established fact that a reader will be distracted by the readable content of a page
+                    Vasto catálogo com a maior gama de exames de qualquer convênio do Brasil
                    </small>
                 </div>
             </article>
@@ -78,16 +77,16 @@
                 <div>
                    <h4>Consulta Online</h4> 
                    <small>
-                    t is a long established fact that a reader will be distracted by the readable content of a page
+                    Interface rápica e intuitiva para que você consiga marcar consultas com a maior praticidade.
                    </small>
                 </div>
             </article>
             <article>
                 <i class='bx bxs-book-content'></i>
                 <div>
-                   <h4>UTI</h4> 
+                   <h4>Facilidade de Atendimento</h4> 
                    <small>
-                    t is a long established fact that a reader will be distracted by the readable content of a page
+                    Encontre-nos no Whatsapp, Email, Instagram e em nossas unidades presenciais
                    </small>
                 </div>
             </article>
@@ -96,7 +95,7 @@
                 <div>
                    <h4>Internação</h4> 
                    <small>
-                    t is a long established fact that a reader will be distracted by the readable content of a page
+                    Temos as melhores instalações para que você tenha a experiência mais confortável ao cuidar de sua saúde.
                    </small>
                 </div>
             </article>
@@ -105,7 +104,7 @@
                 <div>
                    <h4>Cirurgia</h4> 
                    <small>
-                    t is a long established fact that a reader will be distracted by the readable content of a page
+                    Teecnologia de última geração para a realização de cirurgias
                    </small>
                 </div>
             </article>
@@ -116,7 +115,7 @@
 <section id="doctor">
     <h2>Nossos Médicos</h2>
     <p>
-        orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        Os profissionais mais renomados e avaliados da região
     </p>
     <div class="container">
         <article>
@@ -128,12 +127,12 @@
                 <small>Cirurgião</small>
             </div>
             <div class="doctor__socials">
-                <a href="#" target="_blank"><i class='bx bxl-linkedin'style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-twitter' style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-instagram' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-linkedin'style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-twitter' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-instagram' style='color:#121111'></i></a>
             </div>
-            <a href="#" target="_blank" class="doctor__whatsapp"><i class='bx bxl-whatsapp'></i></a>
+            <a href="#"  class="doctor__whatsapp"><i class='bx bxl-whatsapp'></i></a>
         </article>
 
 
@@ -147,12 +146,12 @@
                 <small>Clinica</small>
             </div>
             <div class="doctor__socials">
-                <a href="#" target="_blank"><i class='bx bxl-linkedin'style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-twitter' style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-instagram' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-linkedin'style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-twitter' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-instagram' style='color:#121111'></i></a>
             </div>
-            <a href="#" target="_blank" class="doctor__whatsapp"><i class='bx bxl-whatsapp'></i></a>
+            <a href="#"  class="doctor__whatsapp"><i class='bx bxl-whatsapp'></i></a>
         </article>
 
 
@@ -162,16 +161,16 @@
                 <img src="static/img/specialist3.jpg" alt="Médico 3">
             </div>
             <div class="doctor__details">
-                <h4>Dra. Bárbara Paula Vadão</h4>
+                <h4>Dra. Bárbara Paula</h4>
                 <small>Pediatra</small>
             </div>
             <div class="doctor__socials">
-                <a href="#" target="_blank"><i class='bx bxl-linkedin' style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-twitter' style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-instagram' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-linkedin' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-twitter' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-instagram' style='color:#121111'></i></a>
             </div>
-            <a href="#" target="_blank" class="doctor__whatsapp"><i class='bx bxl-whatsapp'></i></a>
+            <a href="#"  class="doctor__whatsapp"><i class='bx bxl-whatsapp'></i></a>
         </article>
 
         <article>
@@ -180,15 +179,15 @@
             </div>
             <div class="doctor__details">
                 <h4>Dr. Amarilla  Canário</h4>
-                <small>Pediatra</small>
+                <small>Enfermeira</small>
             </div>
             <div class="doctor__socials">
-                <a href="#" target="_blank"><i class='bx bxl-linkedin' style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-twitter' style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-instagram' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-linkedin' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-twitter' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-facebook-circle' style='color:#121111'></i></a>
+                <a href="#" ><i class='bx bxl-instagram' style='color:#121111'></i></a>
             </div>
-            <a href="#" target="_blank" class="doctor__whatsapp"><i class='bx bxl-whatsapp' ></i></a>
+            <a href="#"  class="doctor__whatsapp"><i class='bx bxl-whatsapp' ></i></a>
         </article>
     </div>
 </section>
@@ -197,7 +196,7 @@
 
 <section id="testimonials"  class="swiper mySwiper">
     <h2>O que nossos pacientes falam</h2>
-    <p>Essas são as opnições dos nossos pacientes</p>
+    <p>Essas são as opniões dos nossos pacientes</p>
 
     <div class="swiper-wrapper">
         <article class="swiper-slide">
@@ -314,27 +313,27 @@
         <article class="contact">
             <div class="contact__items">
                 <i class='bx bx-phone'></i>
-                <a href="tel:+558140028922"><h3>40028922</h3></a>
+                <a href="tel:+558140028922"><h3>(81)4002-8922</h3></a>
             </div>
             <div class="contact__items">
                 <i class='bx bx-envelope'></i>
-                <a href="mailto:Ouvidoria@helpMe.com"><h3>Ouvidoria@helpMe.com</h3></a>
+                <a href="mailto:Ouvidoria@helpMe.com"><h3>ouvidoria@helpMe.com</h3></a>
             </div>
         </article>
 
         <article class="adress">
             <i class='bx bx-home'></i>
-            <a href="https://www.google.com/maps/dir/-8.0265718,-34.9022743/faculdade+senac/@-8.0400937,-34.9093376,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x7ab1997eb26b1bb:0x38559aaa17ddef7c!2m2!1d-34.8852306!2d-8.0524945" target="_blank"><h3> R. do Pombal, 57 - Santo Amaro, Recife - PE, 50100-170</h3></a>
+            <a href="https://www.google.com/maps/dir/-8.0265718,-34.9022743/faculdade+senac/@-8.0400937,-34.9093376,14z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x7ab1997eb26b1bb:0x38559aaa17ddef7c!2m2!1d-34.8852306!2d-8.0524945" ><h3> R. do Pombal, 57 - Santo Amaro, Recife - PE, 50100-170</h3></a>
             
             <a href="#"></i></a>
         </article>
 
         <article>
             <div class="footer__socials">
-                <a href="#" target="_blank"><i class='bx bxl-facebook-circle' ></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-youtube' ></i></a>
-                <a href="#" target="_blank"><i class='bx bxl-linkedin' ></i></a>
+                <a href="#" ><i class='bx bxl-facebook-circle' ></i></a>
+                <a href="#" ><i class='bx bxl-instagram' ></i></a>
+                <a href="#" ><i class='bx bxl-youtube' ></i></a>
+                <a href="#" ><i class='bx bxl-linkedin' ></i></a>
             </div> 
         </article>
 
